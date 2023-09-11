@@ -1,9 +1,9 @@
 import React from "react";
 import "./Home.css";
 import { BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
+import {FaInstagramSquare} from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6";
-import { AiOutlineUser } from "react-icons/ai";
-import { FaFacebookMessenger } from "react-icons/fa";
+import { AiOutlineUser} from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { ImFacebook2 } from "react-icons/im";
 import homeImage from "../../assets/images/home-img.png";
@@ -17,16 +17,16 @@ function Home() {
           <span className="home-social-follow">Follow Me</span>
           <div className="home-social-links">
             <a href="" target="_blank" className="home-social-link">
-              <BsInstagram />
-            </a>
-            <a href="" target="_blank" className="home-social-link">
               <BsLinkedin />
             </a>
             <a href="" target="_blank" className="home-social-link">
               <FaSquareXTwitter size={20} />
             </a>
             <a href="" target="_blank" className="home-social-link">
-              <ImFacebook2 />
+              <ImFacebook2 size={18}/>
+            </a>
+            <a href="" target="_blank" className="home-social-link">
+            <FaInstagramSquare size={21}/>
             </a>
           </div>
         </div>
@@ -40,15 +40,16 @@ function Home() {
                 "Full Stack Web Developer 💻✨",
                 "App Developer 📱✨",
                 "Guitarist 🎸✨",
+                "Audio Engineer - Autodidact 🔊✨"
               ]}
               typeSpeed={40}
               backSpeed={50}
               loop
+              className="home-subtitle-typed"
             />
           </h3>
           <p className="home-description">
-            High level experience in web design and development knowledge,
-            producing quality work.
+          As a developer, I craft digital experiences that bring ideas to life through code and design, shaping the future of technology.
           </p>
           <a href="#about" className="button">
             <AiOutlineUser className="button-icon" /> More About Me
@@ -56,9 +57,9 @@ function Home() {
         </div>
         <div className="my-info">
           <div className="info-item">
-            <FaFacebookMessenger className="info-icon" />
+            <BsInstagram className="info-icon" />
             <div>
-              <h3 className="info-title">Messenger</h3>
+              <h3 className="info-title">Instagram</h3>
               <span className="info-subtitle">karan_vinkare</span>
             </div>
           </div>
