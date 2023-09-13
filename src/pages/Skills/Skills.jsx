@@ -1,201 +1,135 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Skills.css";
 import { IoIosArrowDown } from "react-icons/io";
-import { AiOutlineDatabase } from "react-icons/ai";
+import { AiFillDatabase, AiOutlineLaptop } from "react-icons/ai";
+import { BsDatabase } from "react-icons/bs";
+import { VscTools } from "react-icons/vsc";
 
 function Skills() {
+  const defaultActiveSkill = "Frontend"; // Set your desired default skill here
+  const [activeSkill, setActiveSkill] = useState(
+    localStorage.getItem("activeSkill") || defaultActiveSkill
+  );
+
+  const toggleSkill = (skill) => {
+    setActiveSkill(skill);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("activeSkill", activeSkill);
+  }, [activeSkill]);
+
+  const skillsData = {
+    Frontend: {
+      experience: "More than 7+ Projects",
+      skills: [
+        { name: "HTML", percentage: 90 },
+        { name: "CSS", percentage: 85 },
+        { name: "JavaScript", percentage: 80 },
+        { name: "ReactJs", percentage: 85 },
+        { name: "Responsive Design", percentage: 100 },
+      ],
+    },
+    Backend: {
+      experience: "More than 6+ Projects",
+      skills: [
+        { name: "NodeJs", percentage: 70 },
+        { name: "ExpressJs", percentage: 80 },
+        { name: "RESTful APIs", percentage: 100 },
+        { name: "Authentication and Authorization", percentage: 100 },
+        { name: "Version Control/Git", percentage: 85 },
+        { name: "CI/CD", percentage: 90 },
+      ],
+    },
+    Database: {
+      experience: "More than 6+ Projects",
+      skills: [
+        { name: "MongoDB", percentage: 85 },
+        { name: "MySQL", percentage: 70 },
+      ],
+    },
+    Tools: {
+      experience: "Expert",
+      skills: [
+        { name: "Visual Studio Code", percentage: 100 },
+        { name: "Postman", percentage: 100 },
+        { name: "MongoDB Compass", percentage: 100 },
+        { name: "Chrome DevTools", percentage: 100 },
+        { name: "GitHub Desktop", percentage: 100 },
+      ],
+    },
+  };
+
+  const skillIcons = {
+    Frontend: <AiOutlineLaptop className="skills-icon" />,
+    Backend: <AiFillDatabase className="skills-icon" />,
+    Database: <BsDatabase className="skills-icon" />,
+    Tools: <VscTools className="skills-icon" />,
+    // Add more skills and their icons as needed
+  };
+
   return (
     <section className="skills section" id="skills">
-      <h2 className="section-title">My Experience</h2>
+      <h2 className="section-title">My Technical Skills</h2>
       <div className="skills-container container grid">
         <div className="skills-tabs">
-          <div className="skills-header skills-active" data-target="#frontend">
-            <AiOutlineDatabase className="skills-icon" />
-            <div>
-              <h1 className="skills-title">Frontend Developer</h1>
-              <span className="skills-subtitle">More than 2+ Years</span>
-            </div>
-            <IoIosArrowDown className="skills-arrow" />
-          </div>
-
-          <div className="skills-header" data-target="#design">
-            <AiOutlineDatabase className="skills-icon" />
-            <div>
-              <h1 className="skills-title">Frontend Developer</h1>
-              <span className="skills-subtitle">More than 2+ Years</span>
-            </div>
-            <IoIosArrowDown className="skills-arrow" />
-          </div>
-
-          <div className="skills-header" data-target="#backend">
-            <AiOutlineDatabase className="skills-icon" />
-            <div>
-              <h1 className="skills-title">Frontend Developer</h1>
-              <span className="skills-subtitle">More than 2+ Years</span>
-            </div>
-            <IoIosArrowDown className="skills-arrow" />
-          </div>
+          {Object.keys(skillsData).map((skill) => {
+            const skillInfo = skillsData[skill];
+            return (
+              <div
+                key={skill}
+                className={`skills-header ${
+                  activeSkill === skill ? "skills-active" : ""
+                }`}
+                onClick={() => toggleSkill(skill)}
+                data-target={`#${skill}`}
+              >
+                {skillIcons[skill]}
+                <div>
+                  <h1 className="skills-title">{skill}</h1>
+                  <span className="skills-subtitle">{skillInfo.experience}</span>
+                </div>
+                <IoIosArrowDown
+                  className={`skills-arrow ${
+                    activeSkill === skill ? "active-skill" : ""
+                  }`}
+                />
+              </div>
+            );
+          })}
         </div>
 
         <div className="skills-content">
-          <div className="skills-group skills-active" data-content id="frontend">
-            <div className="skills-list grid">
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">HTML</h3>
-                  <span className="skills-number">90%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "90%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">CSS</h3>
-                  <span className="skills-number">80%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "90%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">JavaScript</h3>
-                  <span className="skills-number">85%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "85%" }}
-                  ></span>
+          {Object.keys(skillsData).map((skill) => {
+            const skillInfo = skillsData[skill];
+            return (
+              <div
+                key={skill}
+                className={`skills-group ${
+                  activeSkill === skill ? "skills-active" : ""
+                }`}
+                data-content
+                id={skill}
+              >
+                <div className="skills-list grid">
+                  {skillInfo.skills.map((data) => (
+                    <div className="skills-data" key={data.name}>
+                      <div className="skills-titles">
+                        <h3 className="skills-name">{data.name}</h3>
+                        <span className="skills-number">{`${data.percentage}%`}</span>
+                      </div>
+                      <div className="skills-bar">
+                        <span
+                          className="skills-percentage"
+                          style={{ width: `${data.percentage}%` }}
+                        ></span>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">ReactJs</h3>
-                  <span className="skills-number">85%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "85%" }}
-                  ></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="skills-group" data-content id="design">
-            <div className="skills-list grid">
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">HTML</h3>
-                  <span className="skills-number">90%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "90%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">CSS</h3>
-                  <span className="skills-number">80%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "90%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">JavaScript</h3>
-                  <span className="skills-number">85%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "85%" }}
-                  ></span>
-                </div>
-              </div>
-            </div>
-            <div className="skills-data">
-              <div className="skills-titles">
-                <h3 className="skills-name">ReactJs</h3>
-                <span className="skills-number">85%</span>
-              </div>
-              <div className="skills-bar">
-                <span
-                  className="skills-percentage"
-                  style={{ width: "85%" }}
-                ></span>
-              </div>
-            </div>
-          </div>
-
-          <div className="skills-group" data-content id="backend">
-            <div className="skills-list grid">
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">HTML</h3>
-                  <span className="skills-number">90%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "90%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">CSS</h3>
-                  <span className="skills-number">80%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "90%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">JavaScript</h3>
-                  <span className="skills-number">85%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "85%" }}
-                  ></span>
-                </div>
-              </div>
-              <div className="skills-data">
-                <div className="skills-titles">
-                  <h3 className="skills-name">ReactJs</h3>
-                  <span className="skills-number">85%</span>
-                </div>
-                <div className="skills-bar">
-                  <span
-                    className="skills-percentage"
-                    style={{ width: "85%" }}
-                  ></span>
-                </div>
-              </div>
-            </div>
-          </div>
+            );
+          })}
         </div>
       </div>
     </section>

@@ -94,6 +94,10 @@
 }
 .timeline-text{
     font-size: var(--smaller-font-size);
+    margin-bottom: var(--mb-0-25);
+}
+.timeline-text-cgpa{
+    font-size: var(--smaller-font-size);
     margin-bottom: var(--mb-1);
 }
 .timeline-date{
