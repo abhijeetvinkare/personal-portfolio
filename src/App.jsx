@@ -3,6 +3,8 @@ import Sidebar from "./components/Sidebar/Sidebar";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Skills from "./pages/Skills/Skills";
+import Certifications from "./pages/Certifications/Certifications";
+import Testimonials from "./pages/Testimonials/Testimonials";
 
 function App() {
   return (
@@ -12,6 +14,7 @@ function App() {
         <Home />
         <About />
         <Skills />
+        <Certifications />
       </main>
     </>
   );

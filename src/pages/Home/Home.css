@@ -82,13 +82,13 @@
 .info-item {
   display: flex;
   align-items: center;
-  padding-left: 16px;
+  /* padding-left: 16px; */
   padding-right: 10px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  border-radius: 8px;
+  /* padding-top: 10px; */
+  padding-bottom: 7px;
+  /* border-radius: 8px;
   border: 2px solid;
-  background: #0a0a0f;
+  background: #0a0a0f; */
 }
 
 .info-title,
