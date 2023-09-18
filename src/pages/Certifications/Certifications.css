@@ -1,9 +1,7 @@
-@media screen and (min-width: 992px) {
-  .certifications-container {
-    width: 750px;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
+.certifications-container {
+  width: 350px;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 .certification-card {
@@ -11,6 +9,10 @@
   padding: 1.8rem 2rem;
   border-radius: 0.5rem;
   margin-bottom: 3rem;
+  height: 450px !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
 }
 
 .certification-quote {
@@ -24,6 +26,6 @@
   background: #3f3e3e !important;
 }
 
-.swiper-pagination-bullet-active{
-    background-color: var(--skin-color) !important;
+.swiper-pagination-bullet-active {
+  background-color: var(--skin-color) !important;
 }
