@@ -33,7 +33,7 @@ function About() {
   return (
     <>
       <section className="about section" id="about">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title" data-heading="My Intro">About Me</h2>
         <div className="about-container container grid">
           <img src={aboutImg} alt="" className="about-img" />
           <div className="about-data">
@@ -58,7 +58,7 @@ function About() {
         </div>
       </section>
       <section className="qualification section">
-        <h2 className="section-title">Qualification</h2>
+        <h2 className="section-title" data-heading="My Intro">Qualification</h2>
         <div className="qualification-container container grid">
           <div className="education">
             <h3 className="qualification-title">

@@ -70,7 +70,7 @@ function Skills() {
 
   return (
     <section className="skills section" id="skills">
-      <h2 className="section-title">My Technical Skills</h2>
+      <h2 className="section-title" data-heading="My Intro">My Technical Skills</h2>
       <div className="skills-container container grid">
         <div className="skills-tabs">
           {Object.keys(skillsData).map((skill) => {

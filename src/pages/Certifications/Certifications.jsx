@@ -73,7 +73,7 @@ function Certifications() {
 
   return (
     <section className="certifications section">
-      <h2 className="section-title" data-heading="My clients say">
+      <h2 className="section-title" data-heading="My Intro">
         My Certifications
       </h2>
       <div className="certifications-container container swiper">

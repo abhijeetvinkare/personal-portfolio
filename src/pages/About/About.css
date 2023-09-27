@@ -9,7 +9,7 @@
 }
 
 .section-title::before{
-    content: "My Intro";
+    content: attr(data-heading);
     display: block;
     font-size: var(--normal-font-size);
     font-weight: var(--font-medium);
