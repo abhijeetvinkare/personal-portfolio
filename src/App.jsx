@@ -7,6 +7,7 @@ import Certifications from "./pages/Certifications/Certifications";
 import Testimonials from "./pages/Testimonials/Testimonials";
 import Services from "./pages/Services/Services";
 import Work from "./pages/Work/Work";
+import Contact from "./pages/Contact/Contact";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Certifications />
         <Services />
         <Work />
+        <Contact />
       </main>
     </>
   );
