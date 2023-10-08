@@ -22,7 +22,7 @@ function Services() {
           <span className="services-button">
             View More <AiOutlineArrowRight className="services-button-icon" />
           </span>
-
+{/* 
           <div className="services-model">
             <div className="services-model-content">
               <i></i>
@@ -35,7 +35,7 @@ function Services() {
               </li>
             </ul>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <div className="services-content">

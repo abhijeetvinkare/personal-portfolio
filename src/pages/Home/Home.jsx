@@ -60,7 +60,7 @@ function Home() {
             <BsInstagram className="info-icon" />
             <div>
               <h3 className="info-title">Instagram</h3>
-              <span className="info-subtitle">karan_vinkare</span>
+              <span className="info-subtitle">__abhijeet__vinkare</span>
             </div>
           </div>
           <div className="info-item">
@@ -74,7 +74,7 @@ function Home() {
             <SiGmail className="info-icon" />
             <div>
               <h3 className="info-title">Email</h3>
-              <span className="info-subtitle">karan_vinkare@gmail.com</span>
+              <span className="info-subtitle">abhijeetvinkare@gmail.com</span>
             </div>
           </div>
         </div>
