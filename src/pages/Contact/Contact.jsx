@@ -34,6 +34,10 @@ function Contact() {
     };
   }, []);
 
+  const handleSubmit = (e) =>{
+    e.preventDefault();
+  }
+
   return (
     <section className="contact section" id="contact">
       <h2 className="section-title" data-heading="Get in touch ">
@@ -66,19 +70,19 @@ function Contact() {
         </div>
 
         <div className="contact-content">
-          <form action="" className="contact-form">
+          <form onSubmit={handleSubmit} className="contact-form">
             <div className="input-container">
-              <input type="text" className="input" />
+              <input type="text" className="input" required/>
               <label htmlFor="">Name</label>
               <span>Name</span>
             </div>
             <div className="input-container">
-              <input type="email" className="input" />
+              <input type="email" className="input" required/>
               <label htmlFor="">Email</label>
               <span>Email</span>
             </div>
             <div className="input-container textarea">
-              <textarea name="" id="" className="input"></textarea>
+              <textarea name="" id="" className="input" required></textarea>
               <label htmlFor="">Message</label>
               <span>Message</span>
             </div>

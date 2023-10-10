@@ -133,3 +133,70 @@
 .button-icon {
   font-size: 1.25rem;
 }
+
+@media screen and (max-width: 1408px) {
+  .container{
+      margin-left: var(--mb-2-5);
+      margin-right: var(--mb-2-5);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .container{
+      margin-left: var(--mb-1-5);
+      margin-right: var(--mb-1-5);
+  }
+} 
+
+@media screen and (max-width: 768px) {
+  .my-info .info-item:first-child {
+    display: none;
+  }
+  
+}
+
+@media screen and (max-width: 576px) {
+  .home{
+    background-color: #16161E;
+    background-image: none;
+    height: initial;
+    align-items: initial;
+    padding: 7rem 0 2rem;
+  }
+
+  .home-container{
+    row-gap: 2rem;
+  }
+
+  .home-img{
+    display: block;
+    width: 250px;
+    justify-self: center;
+  }
+
+  .home-social{
+    left: initial;
+    right: -1rem;
+    flex-direction: column;
+    row-gap: 3.5rem;
+    margin-top: -30px;
+  }
+
+  .home-social-follow{
+    font-size: var(--smaller-font-size);
+    transform: rotate(90deg);
+  }
+
+  .home-social-links{
+    flex-direction: column;
+    row-gap: .25rem;
+  }
+
+  .home-social-links{
+    font-size: var(--normal-font-size);
+  }
+
+  .my-info{
+    display: none;
+  }
+}

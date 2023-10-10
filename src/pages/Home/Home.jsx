@@ -40,7 +40,8 @@ function Home() {
                 "Full Stack Web Developer 💻✨",
                 "App Developer 📱✨",
                 "Guitarist 🎸✨",
-                "Audio Engineer - Autodidact 🔊✨"
+                "Audio Engineer - Autodidact 🔊✨",
+                "Freelancer ✨",
               ]}
               typeSpeed={40}
               backSpeed={50}

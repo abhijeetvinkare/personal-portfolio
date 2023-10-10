@@ -149,3 +149,16 @@ transition: .3s;
     width: 50%;
     opacity: 1;
 }
+
+@media screen and (max-width: 768px) {
+   .contact-container{
+    grid-template-columns: 360px;
+    row-gap: 3rem;
+   }
+}
+
+@media screen and (max-width: 576px) {
+    .contact-container{
+        grid-template-columns: 300px;
+    }
+  }

@@ -176,11 +176,7 @@ input{
 
 /*========== BREAKPOINTS ==========*/
 /* For Large Devices */
-@media screen and (max-width: 1408px) {}
 
-@media screen and (max-width: 1216px) {}
-
-@media screen and (max-width: 1024px) {}
 
 /* For Medium Devices */
 @media screen and (max-width: 768px) {}

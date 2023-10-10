@@ -68,3 +68,23 @@
     background-color: var(--skin-color);
     color: var(--title-color);
 }
+
+
+@media screen and (max-width: 1216px) {
+    .work-container{
+        grid-template-columns: repeat(2, 330px);
+        gap: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .work-container{
+        grid-template-columns: 330px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .work-container{
+        grid-template-columns: 300px;
+    }
+  }

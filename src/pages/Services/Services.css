@@ -40,3 +40,29 @@
 .services-button:hover .services-button-icon{
     transform: translateX(.25rem);
 }
+
+@media screen and (max-width: 1024px) {
+    .services-container{
+        grid-template-columns:repeat(3, 220px) ;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-container{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+
+    .services-content{
+        padding: 3.5rem .5rem 1.25rem 1.5rem;
+    }
+} 
+
+@media screen and (max-width: 576px) {
+    .services-container{
+        grid-template-columns: repeat(1, 260px);
+    }
+    .section-services{
+        padding:2rem 0 1.5rem;
+    }
+  }
