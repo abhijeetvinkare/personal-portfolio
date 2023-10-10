@@ -1,3 +1,7 @@
+.section-services{
+    padding:5.5rem 0 4rem;
+}
+
 .services-container{
     grid-template-columns: repeat(3,250px);
     justify-content: center;

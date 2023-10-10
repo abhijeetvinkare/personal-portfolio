@@ -7,7 +7,7 @@ import { ImMobile } from "react-icons/im";
 
 function Services() {
   return (
-    <section className="services section" id="services">
+    <section className="services section-services" id="services">
       <h2 data-heading="Services" className="section-title">
         What I Offer
       </h2>

@@ -165,7 +165,14 @@ input{
 
 
 /*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar{
+    width: .60rem;
+    background-color: var(--scroll-bar-color);
+}
 
+::-webkit-scrollbar-thumb{
+    background-color: var(--scroll-thumb-color);
+}
 
 /*========== BREAKPOINTS ==========*/
 /* For Large Devices */
