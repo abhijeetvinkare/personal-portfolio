@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./Sidebar.css";
 import { FiShare2 } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -30,28 +30,26 @@ function Sidebar() {
     };
   }, []);
 
-  const navMenu = document.getElementById("sidebar"),
-    navToggle = document.getElementById("nav-toggle"),
-    navClose = document.getElementById("nav-close");
+  const navMenuRef = useRef(null);
 
-  if (navToggle) {
-    navToggle.addEventListener("click", () => {
-      navMenu.classList.add("show-sidebar");
-    });
-  }
+  const handleToggleClick = () => {
+    if (navMenuRef.current) {
+      navMenuRef.current.classList.add("show-sidebar");
+    }
+  };
 
-  if (navClose) {
-    navClose.addEventListener("click", () => {
-      navMenu.classList.remove("show-sidebar");
-    });
-  }
+  const handleCloseClick = () => {
+    if (navMenuRef.current) {
+      navMenuRef.current.classList.remove("show-sidebar");
+    }
+  };
 
   return (
     <>
-      <div className="nav-toggle" id="nav-toggle">
+      <div className="nav-toggle" id="nav-toggle" onClick={handleToggleClick}>
         <GiHamburgerMenu />
       </div>
-      <aside className="sidebar" id="sidebar">
+      <aside className="sidebar" ref={navMenuRef} id="sidebar">
         <nav className="navbar">
           <div className="nav-logo">
             <img src={logo} alt="logo" className="logo-img" />
@@ -126,7 +124,7 @@ function Sidebar() {
             <FiShare2 className="share-icon" />
           </div>
 
-          <div className="nav-close" id="nav-close">
+          <div className="nav-close" id="nav-close" onClick={handleCloseClick}>
             <AiOutlineClose />
           </div>
         </nav>

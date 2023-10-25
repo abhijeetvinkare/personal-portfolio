@@ -14,7 +14,7 @@ footer p {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  margin-top: -10px;
+  margin-top: -25px;
 }
 
 .footer-h1 {
@@ -45,6 +45,8 @@ footer p {
   justify-content: center;
   list-style: none;
   flex-wrap: wrap;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 .footer-li {
   padding: 10px;

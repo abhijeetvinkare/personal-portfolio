@@ -179,7 +179,7 @@
 
   .home-social{
     left: initial;
-    right: -1.3rem;
+    right: -0.8rem;
     flex-direction: column;
     row-gap: 3.5rem;
     margin-top: -30px;
@@ -206,7 +206,7 @@
 
 @media screen and (max-width: 360px) {
 .home-description {
-  text-align: end;
+  text-align: justify;
   max-width: 450px;
   margin-bottom: var(--mb-2);
   line-height: 1.8;
