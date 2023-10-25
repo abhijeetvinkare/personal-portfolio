@@ -88,3 +88,9 @@
         grid-template-columns: 300px;
     }
   }
+
+  @media screen and (max-width: 310px) {
+    .work-container{
+        grid-template-columns: 250px;
+    }
+  }

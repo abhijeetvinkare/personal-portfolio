@@ -6,7 +6,7 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { AiOutlineUser} from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { ImFacebook2 } from "react-icons/im";
-import homeImage from "../../assets/images/home-img.png";
+import homeImage from "../../assets/images/aboutt.png";
 import Typed from "react-typed";
 
 function Home() {

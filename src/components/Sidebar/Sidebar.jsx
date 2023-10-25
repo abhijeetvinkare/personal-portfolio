@@ -30,49 +30,107 @@ function Sidebar() {
     };
   }, []);
 
+  const navMenu = document.getElementById("sidebar"),
+    navToggle = document.getElementById("nav-toggle"),
+    navClose = document.getElementById("nav-close");
+
+  if (navToggle) {
+    navToggle.addEventListener("click", () => {
+      navMenu.classList.add("show-sidebar");
+    });
+  }
+
+  if (navClose) {
+    navClose.addEventListener("click", () => {
+      navMenu.classList.remove("show-sidebar");
+    });
+  }
+
   return (
     <>
-    <div className="nav-toggle" id="nav-toggle">
-      <GiHamburgerMenu />
-    </div>
-    <aside className="sidebar" id="sidebar">
-      <nav className="navbar">
-        <div className="nav-logo">
-          <img src={logo} alt="logo" className="logo-img" />
-        </div>
-        <div className="nav-menu">
-          <div className="menu">
-            <ul className="nav-list">
-              <li className={`nav-item nav-item-home`}>
-                <a href="#home" className={`nav-link ${activeLink === "home" ? "active-link" : ""}`}>Home</a>
-              </li>
-              <li className={`nav-item`}>
-                <a href="#about" className={`nav-link ${activeLink === "about" ? "active-link" : ""}`}>About</a>
-              </li>
-              <li className={`nav-item`}>
-                <a href="#skills" className={`nav-link ${activeLink === "skills" ? "active-link" : ""}`}>Skills</a>
-              </li>
-              <li className={`nav-item`}>
-                <a href="#services" className={`nav-link ${activeLink === "services" ? "active-link" : ""}`}>Services</a>
-              </li>
-              <li className={`nav-item`}>
-                <a href="#portfolio" className={`nav-link ${activeLink === "portfolio" ? "active-link" : ""}`}>Portfolio</a>
-              </li>
-              <li className={`nav-item`}>
-                <a href="#contact" className={`nav-link ${activeLink === "contact" ? "active-link" : ""}`}>Contact</a>
-              </li>
-            </ul>
+      <div className="nav-toggle" id="nav-toggle">
+        <GiHamburgerMenu />
+      </div>
+      <aside className="sidebar" id="sidebar">
+        <nav className="navbar">
+          <div className="nav-logo">
+            <img src={logo} alt="logo" className="logo-img" />
           </div>
-        </div>
-        <div className="btn-share">
-          <FiShare2 className="share-icon" />
-        </div>
+          <div className="nav-menu">
+            <div className="menu">
+              <ul className="nav-list">
+                <li className={`nav-item nav-item-home`}>
+                  <a
+                    href="#home"
+                    className={`nav-link ${
+                      activeLink === "home" ? "active-link" : ""
+                    }`}
+                  >
+                    Home
+                  </a>
+                </li>
+                <li className={`nav-item`}>
+                  <a
+                    href="#about"
+                    className={`nav-link ${
+                      activeLink === "about" ? "active-link" : ""
+                    }`}
+                  >
+                    About
+                  </a>
+                </li>
+                <li className={`nav-item`}>
+                  <a
+                    href="#skills"
+                    className={`nav-link ${
+                      activeLink === "skills" ? "active-link" : ""
+                    }`}
+                  >
+                    Skills
+                  </a>
+                </li>
+                <li className={`nav-item`}>
+                  <a
+                    href="#services"
+                    className={`nav-link ${
+                      activeLink === "services" ? "active-link" : ""
+                    }`}
+                  >
+                    Services
+                  </a>
+                </li>
+                <li className={`nav-item`}>
+                  <a
+                    href="#portfolio"
+                    className={`nav-link ${
+                      activeLink === "portfolio" ? "active-link" : ""
+                    }`}
+                  >
+                    Portfolio
+                  </a>
+                </li>
+                <li className={`nav-item`}>
+                  <a
+                    href="#contact"
+                    className={`nav-link ${
+                      activeLink === "contact" ? "active-link" : ""
+                    }`}
+                  >
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div className="btn-share">
+            <FiShare2 className="share-icon" />
+          </div>
 
-        <div className="nav-close" id="nav-close">
-          <AiOutlineClose />
-        </div>
-      </nav>
-    </aside>
+          <div className="nav-close" id="nav-close">
+            <AiOutlineClose />
+          </div>
+        </nav>
+      </aside>
     </>
   );
 }

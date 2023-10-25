@@ -172,11 +172,14 @@
     display: block;
     width: 250px;
     justify-self: center;
+    border-radius: 0.75rem;
+    margin-left: -35px;
+    margin-top: -10px;
   }
 
   .home-social{
     left: initial;
-    right: -1rem;
+    right: -1.3rem;
     flex-direction: column;
     row-gap: 3.5rem;
     margin-top: -30px;
@@ -199,4 +202,26 @@
   .my-info{
     display: none;
   }
+}
+
+@media screen and (max-width: 360px) {
+.home-description {
+  text-align: end;
+  max-width: 450px;
+  margin-bottom: var(--mb-2);
+  line-height: 1.8;
+  margin-top: 20px;
+}
+.home-subtitle{
+  margin-top: 15px;
+}
+}
+@media screen and (max-width: 350px) {
+.home-img{
+  width: 230px;
+  margin-left: -45px;
+}
+.home-social{
+  margin-top: -44px;
+}
 }

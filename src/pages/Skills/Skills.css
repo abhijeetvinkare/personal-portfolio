@@ -89,3 +89,16 @@
     row-gap: 1.7rem;
   } */
 }
+
+@media screen and (max-width: 360px) {
+  .skills-container{
+    grid-template-columns: 280px; 
+    row-gap: 3rem;
+  }
+ }
+
+ @media screen and (max-width: 310px) {
+  .skills-container{
+    grid-template-columns: 230px; 
+  }
+ }
