@@ -1,10 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import "./Contact.css";
 import { AiOutlineSend, AiOutlineArrowRight } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
-import { BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
+import { BsWhatsapp } from "react-icons/bs";
+import emailjs from "@emailjs/browser";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
   useEffect(() => {
     const inputs = document.querySelectorAll(".input");
 
@@ -34,9 +41,46 @@ function Contact() {
     };
   }, []);
 
-  const handleSubmit = (e) =>{
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  }
+
+    const templateParams = {
+      from_name: name,
+      from_email: email,
+      message: message,
+    };
+
+    await emailjs
+      .send(
+        "service_2kqdmhv",
+        "template_cm4g4jr",
+        templateParams,
+        "40uYG0Vr5Dn_MB1QL"
+      )
+      .then(
+        (response) => {
+          console.log("SUCCESS!", response.status, response.text);
+          toast.success('Thanks! Message received.', {
+            position: "bottom-center",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: false,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
+        },
+        (err) => {
+          console.log("FAILED...", err);
+          alert("Something Went Wrong!")
+        }
+      );
+
+    setName("");
+    setEmail("");
+    setMessage("");
+  };
 
   return (
     <section className="contact section" id="contact">
@@ -65,24 +109,48 @@ function Contact() {
                 Text me <AiOutlineArrowRight className="contact-button-icon" />
               </span>
             </div>
-
           </div>
         </div>
 
         <div className="contact-content">
           <form onSubmit={handleSubmit} className="contact-form">
             <div className="input-container">
-              <input type="text" className="input" required/>
+              <input
+                type="text"
+                className="input"
+                value={name}
+                onChange={(e) => {
+                  setName(e.target.value);
+                }}
+                required
+              />
               <label htmlFor="">Name</label>
               <span>Name</span>
             </div>
             <div className="input-container">
-              <input type="email" className="input" required/>
+              <input
+                type="email"
+                className="input"
+                value={email}
+                onChange={(e) => {
+                  setEmail(e.target.value);
+                }}
+                required
+              />
               <label htmlFor="">Email</label>
               <span>Email</span>
             </div>
             <div className="input-container textarea">
-              <textarea name="" id="" className="input" required></textarea>
+              <textarea
+                name=""
+                id=""
+                className="input"
+                value={message}
+                onChange={(e) => {
+                  setMessage(e.target.value);
+                }}
+                required
+              ></textarea>
               <label htmlFor="">Message</label>
               <span>Message</span>
             </div>
@@ -93,6 +161,18 @@ function Contact() {
           </form>
         </div>
       </div>
+      <ToastContainer
+        position="bottom-center"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover={false}
+        theme="dark"
+      />
     </section>
   );
 }

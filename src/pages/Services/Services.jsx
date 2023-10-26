@@ -54,7 +54,7 @@ function Services() {
           <div>
             <BiEdit className="services-icon" />
             <h3 className="services-title">
-              UI/UX <br /> Designer
+              UI/UX <br /> Designing
             </h3>
           </div>
           <span className="services-button">
