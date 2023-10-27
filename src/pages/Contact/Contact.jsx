@@ -4,8 +4,8 @@ import { AiOutlineSend, AiOutlineArrowRight } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -60,7 +60,7 @@ function Contact() {
       .then(
         (response) => {
           console.log("SUCCESS!", response.status, response.text);
-          toast.success('Thanks! Message received.', {
+          toast.success("Thanks! Message received.", {
             position: "bottom-center",
             autoClose: 5000,
             hideProgressBar: false,
@@ -69,11 +69,11 @@ function Contact() {
             draggable: true,
             progress: undefined,
             theme: "dark",
-            });
+          });
         },
         (err) => {
           console.log("FAILED...", err);
-          alert("Something Went Wrong!")
+          alert("Something Went Wrong!");
         }
       );
 
@@ -81,6 +81,7 @@ function Contact() {
     setEmail("");
     setMessage("");
   };
+
 
   return (
     <section className="contact section" id="contact">
@@ -97,7 +98,7 @@ function Contact() {
                 abhijeetvinkare@gmail.com
               </span>
               <span className="contact-button">
-                Write me <AiOutlineArrowRight className="contact-button-icon" />
+              <a className="contanct-text-me-hyperlinks" href="mailto:abhijeetvinkare@gmail.com"> Write me <AiOutlineArrowRight className="contact-button-icon" /></a>
               </span>
             </div>
 
@@ -106,7 +107,11 @@ function Contact() {
               <h3 className="contact-card-title">Whatsapp</h3>
               <span className="contact-card-data">+91 9284312533</span>
               <span className="contact-button">
-                Text me <AiOutlineArrowRight className="contact-button-icon" />
+                <a className="contanct-text-me-hyperlinks" href="https://wa.me/+919284312533">
+                  {" "}
+                  Text me{" "}
+                  <AiOutlineArrowRight className="contact-button-icon" />
+                </a>
               </span>
             </div>
           </div>

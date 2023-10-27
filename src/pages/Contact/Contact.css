@@ -173,3 +173,24 @@ transition: .3s;
         grid-template-columns: 250px;
     }
   }
+
+ 
+.contanct-text-me-hyperlinks{
+    color: var(--skin-color);
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .25rem;
+    cursor: pointer;
+}
+
+.contanct-text-me-hyperlinks:visited{
+    color: var(--skin-color);
+    font-size: var(--small-font-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: .25rem;
+    cursor: pointer;
+  }

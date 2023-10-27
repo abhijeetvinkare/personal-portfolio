@@ -101,68 +101,6 @@ input{
     border: none;
     outline: none;
 }
-/*=============== LAYOUT ===============*/
-
-
-/*=============== REUSABLE CSS CLASSES ===============*/
-
-
-/*=============== SIDEBAR ===============*/
-
-
-/* Active Link */
-
-
-/*=============== MAIN ===============*/
-
-
-/*===== Home Section =====*/
-
-
-/*===== Buttons =====*/
-
-
-/*===== About Section =====*/
-
-
-/*===== Qualification Section =====*/
-
-
-/*===== Skills Section =====*/
-
-
-/*===== Work Section =====*/
-
-
-/* Active Item Work */
-
-
-/* Portfolio Popup */
-
-
-/*===== Services Section =====*/
-
-
-/* Active Modal*/
-
-
-/*===== Testimonial Section =====*/
-
-
-/* Swiper Class */
-
-
-/*===== Contact Section =====*/
-
-
-/*=============== FOOTER ===============*/
-
-
-/*=============== SCROLL UP ===============*/
-
-
-/* Show Scroll Up*/
-
 
 /*=============== SCROLL BAR ===============*/
 ::-webkit-scrollbar{
@@ -174,14 +112,3 @@ input{
     background-color: var(--scroll-thumb-color);
 }
 
-/*========== BREAKPOINTS ==========*/
-/* For Large Devices */
-
-
-/* For Medium Devices */
-@media screen and (max-width: 768px) {}
-
-@media screen and (max-width: 576px) {}
-
-/* For Small Devices */
-@media screen and (max-width: 350px) {}

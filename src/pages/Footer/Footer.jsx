@@ -105,6 +105,7 @@ function Footer() {
         >
           <span>Linkedin</span>
         </a>
+        
       </div>
       </div>
       <div className="copyright-div">
