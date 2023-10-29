@@ -110,6 +110,75 @@ function Work() {
         </div>
         </div>
 
+        <div className="work-card mix web">
+          <img src={studentrecordImg} alt="" className="work-img" />
+          <h3 className="work-title">StudentGradeX</h3>
+          <div className="links-container">
+          <div>
+          <a href="https://studentgradex.netlify.app/" target="_blank">
+          <span className="work-button">
+            Demo
+            <AiOutlineArrowRight className="work-button-icon" />
+          </span>
+          </a>
+         </div> 
+         <div>
+          <a href="https://github.com/abhijeetvinkare/StudentGradeX" target="_blank">
+          <span className="work-button">
+            GitHub
+            <AiOutlineGithub className="work-button-icon" />
+          </span>
+          </a>
+         </div> 
+        </div>
+        </div>
+
+        <div className="work-card mix web">
+          <img src={studentrecordImg} alt="" className="work-img" />
+          <h3 className="work-title">StudentGradeX</h3>
+          <div className="links-container">
+          <div>
+          <a href="https://studentgradex.netlify.app/" target="_blank">
+          <span className="work-button">
+            Demo
+            <AiOutlineArrowRight className="work-button-icon" />
+          </span>
+          </a>
+         </div> 
+         <div>
+          <a href="https://github.com/abhijeetvinkare/StudentGradeX" target="_blank">
+          <span className="work-button">
+            GitHub
+            <AiOutlineGithub className="work-button-icon" />
+          </span>
+          </a>
+         </div> 
+        </div>
+        </div>
+
+        <div className="work-card mix web">
+          <img src={studentrecordImg} alt="" className="work-img" />
+          <h3 className="work-title">StudentGradeX</h3>
+          <div className="links-container">
+          <div>
+          <a href="https://studentgradex.netlify.app/" target="_blank">
+          <span className="work-button">
+            Demo
+            <AiOutlineArrowRight className="work-button-icon" />
+          </span>
+          </a>
+         </div> 
+         <div>
+          <a href="https://github.com/abhijeetvinkare/StudentGradeX" target="_blank">
+          <span className="work-button">
+            GitHub
+            <AiOutlineGithub className="work-button-icon" />
+          </span>
+          </a>
+         </div> 
+        </div>
+        </div>
+
         <div className="work-card mix mobile">
           <img src={planthealthImg} alt="" className="work-img" />
           <h3 className="work-title">PlantHealthPro</h3>

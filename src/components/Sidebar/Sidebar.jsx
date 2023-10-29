@@ -4,6 +4,7 @@ import { FiShare2 } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../assets/images/amono.png";
+import { RWebShare } from "react-web-share";
 
 function Sidebar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -121,7 +122,15 @@ function Sidebar() {
             </div>
           </div>
           <div className="btn-share">
-            <FiShare2 className="share-icon" />
+            <RWebShare
+              data={{
+                url: "https://abhijeetvinkare.netlify.com",
+                title: "abhijeetvinkare",
+              }}
+            >
+              <button className="share-btn"><FiShare2 className="share-icon" /></button>
+            </RWebShare>
+            {" "}
           </div>
 
           <div className="nav-close" id="nav-close" onClick={handleCloseClick}>

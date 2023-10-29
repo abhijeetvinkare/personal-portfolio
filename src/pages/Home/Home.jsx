@@ -1,12 +1,13 @@
 import React from "react";
 import "./Home.css";
-import { BsInstagram, BsLinkedin, BsWhatsapp } from "react-icons/bs";
+import { BsInstagram, BsLinkedin, BsWhatsapp, BsDownload } from "react-icons/bs";
 import {FaInstagramSquare} from "react-icons/fa"
 import { FaSquareXTwitter } from "react-icons/fa6";
 import { AiOutlineUser} from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { ImFacebook2 } from "react-icons/im";
 import homeImage from "../../assets/images/ddd.png";
+import resume from "../../assets/PDF/resume.pdf"
 import Typed from "react-typed";
 
 function Home() {
@@ -52,8 +53,11 @@ function Home() {
           <p className="home-description">
           As a developer, I craft digital experiences that bring ideas to life through code and design, shaping the future of technology.
           </p>
-          <a href="#about" className="button">
+          <a href="#about" className="button btn-more">
             <AiOutlineUser className="button-icon" /> More About Me
+          </a>
+          <a href={resume} download className="button btn-resume">
+            <BsDownload className="button-icon btn-resume-icon" /> Resume
           </a>
         </div>
         <div className="my-info">
