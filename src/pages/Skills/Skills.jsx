@@ -4,6 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { AiFillDatabase, AiOutlineLaptop } from "react-icons/ai";
 import { BsDatabase } from "react-icons/bs";
 import { VscTools } from "react-icons/vsc";
+import { Fade, Slide, Zoom, Flip, Bounce } from 'react-reveal';
 
 function Skills() {
   const defaultActiveSkill = "Frontend"; // Set your desired default skill here
@@ -70,12 +71,13 @@ function Skills() {
 
   return (
     <section className="skills section" id="skills">
-      <h2 className="section-title" data-heading="My Intro">My Technical Skills</h2>
+      <Fade big cascade duration={2000} delay={200} ease="ease"><h2 className="section-title" data-heading="My Intro">My Technical Skills</h2></Fade>
       <div className="skills-container container grid">
         <div className="skills-tabs">
           {Object.keys(skillsData).map((skill) => {
             const skillInfo = skillsData[skill];
             return (
+              <Fade bottom duration={2000} delay={200} ease="ease">  
               <div
                 key={skill}
                 className={`skills-header ${
@@ -95,6 +97,7 @@ function Skills() {
                   }`}
                 />
               </div>
+            </Fade >
             );
           })}
         </div>
@@ -103,6 +106,7 @@ function Skills() {
           {Object.keys(skillsData).map((skill) => {
             const skillInfo = skillsData[skill];
             return (
+              <Fade bottom duration={2000} delay={200} ease="ease">  
               <div
                 key={skill}
                 className={`skills-group ${
@@ -128,6 +132,7 @@ function Skills() {
                   ))}
                 </div>
               </div>
+              </Fade >  
             );
           })}
         </div>

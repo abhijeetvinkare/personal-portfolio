@@ -16,6 +16,7 @@ import certificateImg10 from "../../assets/images/certifications/TCS.jpg";
 import certificateImg11 from "../../assets/images/certifications/certificate.jpg";
 import certificateImg12 from "../../assets/images/certifications/0000.jpg";
 import certificateImg13 from "../../assets/images/certifications/0001.jpg";
+import { Fade, Slide, Zoom } from "react-reveal";
 
 function Certifications() {
   const certificationsData = [
@@ -73,9 +74,11 @@ function Certifications() {
 
   return (
     <section className="certifications section">
-      <h2 className="section-title" data-heading="My Intro">
+      <Fade big cascade duration={2000} delay={200} ease="ease"><h2 className="section-title" data-heading="My Intro">
         My Certifications
       </h2>
+      </Fade>
+      <Fade duration={2000} delay={200} ease="ease">
       <div className="certifications-container container swiper">
         <Swiper
           modules={[Autoplay, Pagination]}
@@ -91,6 +94,7 @@ function Certifications() {
           style={{ cursor: "pointer" }}
         >
           {certificationsData.map((certification, index) => (
+           
             <SwiperSlide
               key={index}
               onClick={() => handleCertificationClick(certification.url)}
@@ -99,9 +103,11 @@ function Certifications() {
                 <img className="cer-img" src={certification.image} alt="" />
               </div>
             </SwiperSlide>
+            
           ))}
         </Swiper>
       </div>
+      </Fade>
     </section>
   );
 }

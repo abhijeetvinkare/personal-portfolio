@@ -5,6 +5,8 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../assets/images/amono.png";
 import { RWebShare } from "react-web-share";
+import { Fade, Slide, Zoom } from "react-reveal";
+import scrollLock from 'scroll-lock';
 
 function Sidebar() {
   const [activeLink, setActiveLink] = useState("home");
@@ -36,14 +38,17 @@ function Sidebar() {
   const handleToggleClick = () => {
     if (navMenuRef.current) {
       navMenuRef.current.classList.add("show-sidebar");
+      scrollLock.disablePageScroll();
     }
   };
 
   const handleCloseClick = () => {
     if (navMenuRef.current) {
       navMenuRef.current.classList.remove("show-sidebar");
+      scrollLock.enablePageScroll();
     }
   };
+
 
   return (
     <>

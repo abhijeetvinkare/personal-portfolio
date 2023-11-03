@@ -1,11 +1,12 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./About.css";
 import aboutImg from "../../assets/images/about.png";
 import { AiOutlineSend } from "react-icons/ai";
 import { FaGraduationCap } from "react-icons/fa";
+import { Fade, Slide, Zoom } from 'react-reveal';
 
 function About() {
-
+  const [isVisible, setIsVisible] = useState(false);
   const qualificationItems = [
     {
       title: "Swami Ramanand Teerth Marathwada University (Nanded, IN)",
@@ -30,13 +31,43 @@ function About() {
     },
   ];
 
+
+    
+
+  useEffect(() => {
+    const targetElement = document.getElementById('react-revel-id-btn-aboutme');
+    
+    if (targetElement) {
+      const handleScroll = () => {
+        const scrollY = window.scrollY;
+        const targetElementOffset = targetElement.offsetTop;
+
+        // Set the scroll position where you want the animation to reset based on the target element's offset.
+        const resetScrollPosition = targetElementOffset;
+
+        setIsVisible(scrollY > resetScrollPosition);
+      };
+
+      window.addEventListener('scroll', handleScroll);
+
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }
+  }, []);
+
+
+
+
+  const isMobile = window.innerWidth <= 1024;
+
   return (
     <>
       <section className="about section" id="about">
-        <h2 className="section-title" data-heading="My Intro">About Me</h2>
-        <div className="about-container container grid">
-          <img src={aboutImg} alt="" className="about-img" />
-          <div className="about-data">
+      <Fade big cascade duration={2000} delay={200} ease="ease"><h2 className="section-title" data-heading="My Intro">About Me</h2></Fade>
+        <div className="about-container container grid" id="about-div">
+        <Fade duration={2000} delay={200} ease="ease" left={isMobile} bottom={!isMobile} when={isVisible}><img src={aboutImg} alt="" className="about-img" /></Fade>
+        <Fade duration={2000} delay={200} ease="ease" big={isMobile} top={!isMobile} when={isVisible}><div className="about-data">
             <h3 className="about-heading">
               Hi, I'm Abhijeet Vinkare, Based in India
             </h3>
@@ -55,18 +86,22 @@ function About() {
               <AiOutlineSend className="button-icon" /> Contact Me
             </a>
           </div>
+          </Fade>
         </div>
       </section>
       <section className="qualification section">
-        <h2 className="section-title" data-heading="My Intro">Qualification</h2>
+      <Fade big cascade duration={2000} delay={200} ease="ease"><h2 className="section-title" data-heading="My Intro">Qualification</h2></Fade>
         <div className="qualification-container container grid">
           <div className="education">
+          <Fade duration={2000} delay={400} ease="ease">
             <h3 className="qualification-title">
               <FaGraduationCap fontSize={35} style={{ marginRight: "10px" }} />{" "}
               Education
             </h3>
+            </Fade >
             <div className="timeline">
               {qualificationItems.map((data, index) => (
+                <Fade duration={3000} delay={400} ease="ease-in-out">
                 <div className="timeline-item" key={index}>
                   <div className="circle-dot"></div>
                   <h3 className="timeline-title">
@@ -82,6 +117,7 @@ function About() {
                   )}
                   <span className="timeline-date">{data.date}</span>
                 </div>
+                </Fade>
               ))}
             </div>
           </div>

@@ -112,3 +112,12 @@ input{
     background-color: var(--scroll-thumb-color);
 }
 
+
+
+
+
+/* react-revel animations */
+/* Apply these styles to hide horizontal overflow during animations */
+body.no-scrollbars {
+    overflow-x: hidden;
+  }

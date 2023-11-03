@@ -114,9 +114,13 @@
   .show-sidebar {
     transform: translateX(0);
   }
-  .nav-logo,
+  .nav-logo{
+    margin-top: 15px;
+    width: 95px;
+  }
+
   .btn-share {
-    display: none;
+    bottom: 100px;
   }
 
   .nav-menu {
@@ -129,7 +133,7 @@
 
   .nav-list {
     flex-direction: column;
-    height: 100%;
+    height: 95%;
     justify-content: center;
     align-items: center;
   }
@@ -145,7 +149,11 @@
   }
 
   .nav-close {
+    margin-top: 25px;
+    margin-right: 5px;
     display: block;
+    font-size: 55px;
+    color: var(--skin-color);
   }
 
   .nav-toggle {
