@@ -6,10 +6,21 @@ import { AiOutlineClose } from "react-icons/ai";
 import logo from "../../assets/images/amono.png";
 import { RWebShare } from "react-web-share";
 import { Fade, Slide, Zoom } from "react-reveal";
-import scrollLock from 'scroll-lock';
+import scrollLock from "scroll-lock";
 
 function Sidebar() {
   const [activeLink, setActiveLink] = useState("home");
+
+  var prevScrollpos = window.pageYOffset;
+  window.onscroll = function () {
+    var currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos) {
+      document.getElementById("nav-toggle").style.top = "32px";
+    } else {
+      document.getElementById("nav-toggle").style.top = "-50px";
+    }
+    prevScrollpos = currentScrollPos;
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +60,6 @@ function Sidebar() {
     }
   };
 
-
   return (
     <>
       <div className="nav-toggle" id="nav-toggle" onClick={handleToggleClick}>
@@ -58,85 +68,99 @@ function Sidebar() {
       <aside className="sidebar" ref={navMenuRef} id="sidebar">
         <nav className="navbar">
           <div className="nav-logo">
-            <img src={logo} alt="logo" className="logo-img" />
+            <Fade duration={2000} delay={200} ease="ease" left>
+              {" "}
+              <img src={logo} alt="logo" className="logo-img" />{" "}
+            </Fade>
           </div>
           <div className="nav-menu">
             <div className="menu">
-              <ul className="nav-list">
-                <li className={`nav-item nav-item-home`}>
-                  <a
-                    href="#home"
-                    className={`nav-link ${
-                      activeLink === "home" ? "active-link" : ""
-                    }`}
-                  >
-                    Home
-                  </a>
-                </li>
-                <li className={`nav-item`}>
-                  <a
-                    href="#about"
-                    className={`nav-link ${
-                      activeLink === "about" ? "active-link" : ""
-                    }`}
-                  >
-                    About
-                  </a>
-                </li>
-                <li className={`nav-item`}>
-                  <a
-                    href="#skills"
-                    className={`nav-link ${
-                      activeLink === "skills" ? "active-link" : ""
-                    }`}
-                  >
-                    Skills
-                  </a>
-                </li>
-                <li className={`nav-item`}>
-                  <a
-                    href="#services"
-                    className={`nav-link ${
-                      activeLink === "services" ? "active-link" : ""
-                    }`}
-                  >
-                    Services
-                  </a>
-                </li>
-                <li className={`nav-item`}>
-                  <a
-                    href="#portfolio"
-                    className={`nav-link ${
-                      activeLink === "portfolio" ? "active-link" : ""
-                    }`}
-                  >
-                    Portfolio
-                  </a>
-                </li>
-                <li className={`nav-item`}>
-                  <a
-                    href="#contact"
-                    className={`nav-link ${
-                      activeLink === "contact" ? "active-link" : ""
-                    }`}
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
+              <Fade duration={2000} delay={200} ease="ease" top>
+                <ul className="nav-list">
+                  <li className={`nav-item nav-item-home`}>
+                    <a
+                      onClick={handleCloseClick}
+                      href="#home"
+                      className={`nav-link ${
+                        activeLink === "home" ? "active-link" : ""
+                      }`}
+                    >
+                      Home
+                    </a>
+                  </li>
+                  <li className={`nav-item`}>
+                    <a
+                      onClick={handleCloseClick}
+                      href="#about"
+                      className={`nav-link ${
+                        activeLink === "about" ? "active-link" : ""
+                      }`}
+                    >
+                      About
+                    </a>
+                  </li>
+                  <li className={`nav-item`}>
+                    <a
+                      onClick={handleCloseClick}
+                      href="#skills"
+                      className={`nav-link ${
+                        activeLink === "skills" ? "active-link" : ""
+                      }`}
+                    >
+                      Skills
+                    </a>
+                  </li>
+                  <li className={`nav-item`}>
+                    <a
+                      onClick={handleCloseClick}
+                      href="#services"
+                      className={`nav-link ${
+                        activeLink === "services" ? "active-link" : ""
+                      }`}
+                    >
+                      Services
+                    </a>
+                  </li>
+                  <li className={`nav-item`}>
+                    <a
+                      onClick={handleCloseClick}
+                      href="#portfolio"
+                      className={`nav-link ${
+                        activeLink === "portfolio" ? "active-link" : ""
+                      }`}
+                    >
+                      Portfolio
+                    </a>
+                  </li>
+                  <li className={`nav-item`}>
+                    <a
+                      onClick={handleCloseClick}
+                      href="#contact"
+                      className={`nav-link ${
+                        activeLink === "contact" ? "active-link" : ""
+                      }`}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+              </Fade>
             </div>
           </div>
-          <div className="btn-share">
-            <RWebShare
-              data={{
-                url: "https://abhijeetvinkare.netlify.com",
-                title: "abhijeetvinkare",
-              }}
-            >
-              <button className="share-btn"><FiShare2 className="share-icon" /></button>
-            </RWebShare>
-            {" "}
-          </div>
+          <Fade duration={2000} delay={200} ease="ease" left>
+            <div className="btn-share">
+              <RWebShare
+                data={{
+                  url: "https://abhijeetvinkare.netlify.com",
+                  title: "abhijeetvinkare",
+                }}
+              >
+                <button className="share-btn">
+                  <FiShare2 className="share-icon" />
+                </button>
+              </RWebShare>
+            </div>
+          </Fade>
 
           <div className="nav-close" id="nav-close" onClick={handleCloseClick}>
             <AiOutlineClose />

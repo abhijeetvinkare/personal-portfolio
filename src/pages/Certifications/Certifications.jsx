@@ -78,7 +78,7 @@ function Certifications() {
         My Certifications
       </h2>
       </Fade>
-      <Fade duration={2000} delay={200} ease="ease">
+      <Fade duration={2000} delay={100} ease="ease">
       <div className="certifications-container container swiper">
         <Swiper
           modules={[Autoplay, Pagination]}

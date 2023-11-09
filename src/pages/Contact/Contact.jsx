@@ -6,6 +6,7 @@ import { BsWhatsapp } from "react-icons/bs";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Fade } from "react-reveal";
 
 function Contact() {
   const [name, setName] = useState("");
@@ -85,12 +86,15 @@ function Contact() {
 
   return (
     <section className="contact section" id="contact">
-      <h2 className="section-title" data-heading="Get in touch ">
+     <Fade big cascade duration={2000} delay={200} ease="ease"> <h2 className="section-title" data-heading="Get in touch ">
         Contact Me
       </h2>
+      </Fade>
       <div className="contact-container container grid">
         <div className="contact-content">
           <div className="contact-info">
+
+          <Fade duration={3000} delay={200} ease="ease">
             <div className="contact-card">
               <SiGmail className="contact-card-icon" />
               <h3 className="contact-card-title">Email</h3>
@@ -101,7 +105,8 @@ function Contact() {
               <a className="contanct-text-me-hyperlinks" href="mailto:abhijeetvinkare@gmail.com"> Write me <AiOutlineArrowRight className="contact-button-icon" /></a>
               </span>
             </div>
-
+            </Fade>
+            <Fade duration={3000} delay={400} ease="ease">
             <div className="contact-card">
               <BsWhatsapp className="contact-card-icon" />
               <h3 className="contact-card-title">Whatsapp</h3>
@@ -114,11 +119,13 @@ function Contact() {
                 </a>
               </span>
             </div>
+            </Fade>
           </div>
         </div>
 
         <div className="contact-content">
           <form onSubmit={handleSubmit} className="contact-form">
+          <Fade duration={3000} delay={200} ease="ease">
             <div className="input-container">
               <input
                 type="text"
@@ -132,6 +139,8 @@ function Contact() {
               <label htmlFor="">Name</label>
               <span>Name</span>
             </div>
+            </Fade>
+            <Fade duration={3000} delay={400} ease="ease">
             <div className="input-container">
               <input
                 type="email"
@@ -145,6 +154,8 @@ function Contact() {
               <label htmlFor="">Email</label>
               <span>Email</span>
             </div>
+            </Fade>
+            <Fade duration={3000} delay={600} ease="ease">
             <div className="input-container textarea">
               <textarea
                 name=""
@@ -159,10 +170,13 @@ function Contact() {
               <label htmlFor="">Message</label>
               <span>Message</span>
             </div>
+            </Fade>
+            <Fade duration={3000} delay={800} ease="ease">
             <button className="button">
               <AiOutlineSend className="button-icon" />
               Send Message
             </button>
+            </Fade>
           </form>
         </div>
       </div>

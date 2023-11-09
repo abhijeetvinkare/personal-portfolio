@@ -6,7 +6,7 @@ import { FaGraduationCap } from "react-icons/fa";
 import { Fade, Slide, Zoom } from 'react-reveal';
 
 function About() {
-  const [isVisible, setIsVisible] = useState(false);
+
   const qualificationItems = [
     {
       title: "Swami Ramanand Teerth Marathwada University (Nanded, IN)",
@@ -32,33 +32,6 @@ function About() {
   ];
 
 
-    
-
-  useEffect(() => {
-    const targetElement = document.getElementById('react-revel-id-btn-aboutme');
-    
-    if (targetElement) {
-      const handleScroll = () => {
-        const scrollY = window.scrollY;
-        const targetElementOffset = targetElement.offsetTop;
-
-        // Set the scroll position where you want the animation to reset based on the target element's offset.
-        const resetScrollPosition = targetElementOffset;
-
-        setIsVisible(scrollY > resetScrollPosition);
-      };
-
-      window.addEventListener('scroll', handleScroll);
-
-      return () => {
-        window.removeEventListener('scroll', handleScroll);
-      };
-    }
-  }, []);
-
-
-
-
   const isMobile = window.innerWidth <= 1024;
 
   return (
@@ -66,8 +39,8 @@ function About() {
       <section className="about section" id="about">
       <Fade big cascade duration={2000} delay={200} ease="ease"><h2 className="section-title" data-heading="My Intro">About Me</h2></Fade>
         <div className="about-container container grid" id="about-div">
-        <Fade duration={2000} delay={200} ease="ease" left={isMobile} bottom={!isMobile} when={isVisible}><img src={aboutImg} alt="" className="about-img" /></Fade>
-        <Fade duration={2000} delay={200} ease="ease" big={isMobile} top={!isMobile} when={isVisible}><div className="about-data">
+        <Fade duration={2000} delay={200} ease="ease" left={isMobile} bottom={!isMobile} ><img src={aboutImg} alt="" className="about-img" /></Fade>
+        <Fade duration={2000} delay={200} ease="ease" big={isMobile} top={!isMobile} ><div className="about-data">
             <h3 className="about-heading">
               Hi, I'm Abhijeet Vinkare, Based in India
             </h3>
