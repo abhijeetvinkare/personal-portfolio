@@ -4,8 +4,9 @@ import "./Work.css";
 import coinwatcherImg from "../../assets/images/Work/3.png";
 import studentrecordImg from "../../assets/images/Work/Untitledsd.png";
 import planthealthImg from "../../assets/images/Work/preview1.png";
-import RecorderXImg from "../../assets/images/Work/recorderx.png";
-import WeatherAppImg from "../../assets/images/Work/weatherapp.png";
+import RecorderXImg from "../../assets/images/Work/record3.jpg";
+import WeatherAppImg from "../../assets/images/Work/weather1.jpg";
+import MovieAppImg from "../../assets/images/Work/movie.png";
 import { useState } from "react";
 import mixitup from "mixitup";
 import { Fade } from "react-reveal";
@@ -163,76 +164,102 @@ function Work() {
         </div>
 
         <div className="work-card mix web">
-        <Fade duration={2000} delay={200} ease="ease" bottom>
-          <div>
-          <img src={RecorderXImg} alt="" className="work-img" />
-          <h3 className="work-title">RecorderX</h3>
-          <div className="links-container">
+          <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <a href="https://recorderx.netlify.app/" target="_blank">
-                <span className="work-button">
-                  Demo
-                  <AiOutlineArrowRight className="work-button-icon" />
-                </span>
-              </a>
+              <img src={RecorderXImg} alt="" className="work-img" />
+              <h3 className="work-title">RecorderX</h3>
+              <div className="links-container">
+                <div>
+                  <a href="https://recorderx.netlify.app/" target="_blank">
+                    <span className="work-button">
+                      Demo
+                      <AiOutlineArrowRight className="work-button-icon" />
+                    </span>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/abhijeetvinkare/RecorderX"
+                    target="_blank"
+                  >
+                    <span className="work-button">
+                      GitHub
+                      <AiOutlineGithub className="work-button-icon" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <a
-                href="https://github.com/abhijeetvinkare/RecorderX"
-                target="_blank"
-              >
-                <span className="work-button">
-                  GitHub
-                  <AiOutlineGithub className="work-button-icon" />
-                </span>
-              </a>
-            </div>
-          </div>
-          </div>
           </Fade>
         </div>
 
-        <div className="work-card mix mobile">
-        <Fade duration={2000} delay={200} ease="ease" bottom>
-          <div>
-          <img src={WeatherAppImg} alt="" className="work-img" />
-          <h3 className="work-title">Weather App</h3>
-          <div className="links-container">
+        <div className="work-card mix web">
+          <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <a
-                href="https://abhijeetvinkare.github.io/weatherapp.github.io/"
-                target="_blank"
-              >
-                <span className="work-button">
-                  Demo
-                  <AiOutlineArrowRight className="work-button-icon" />
-                </span>
-              </a>
+              <img src={WeatherAppImg} alt="" className="work-img" />
+              <h3 className="work-title">WeatherWave</h3>
+              <div className="links-container">
+                <div>
+                  <a
+                    href="https://abhijeetvinkare.github.io/weatherapp.github.io/"
+                    target="_blank"
+                  >
+                    <span className="work-button">
+                      Demo
+                      <AiOutlineArrowRight className="work-button-icon" />
+                    </span>
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://github.com/abhijeetvinkare/weatherapp.github.io"
+                    target="_blank"
+                  >
+                    <span className="work-button">
+                      GitHub
+                      <AiOutlineGithub className="work-button-icon" />
+                    </span>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div>
-              <a
-                href="https://github.com/abhijeetvinkare/weatherapp.github.io"
-                target="_blank"
-              >
-                <span className="work-button">
-                  GitHub
-                  <AiOutlineGithub className="work-button-icon" />
-                </span>
-              </a>
-            </div>
-          </div>
-          </div>
           </Fade>
         </div>
 
+        {activeItem === 'mobile' ? (
+      <>
         <div className="work-card mix mobile">
+          <Fade duration={1000} delay={100} ease="ease" bottom>
+            <h1 className="coming-soon-h1">
+              Coming Soon <span className="dot-pulse"></span>
+            </h1>
+          </Fade>
+        </div>
+        <div className="work-card mix mobile">
+          <Fade duration={1000} delay={100} ease="ease" bottom>
+            <h1 className="coming-soon-h1">
+              Stay Tuned <span className="dot-flashing"></span>
+            </h1>
+          </Fade>
+        </div>
+        <div className="work-card mix mobile">
+          <Fade duration={1000} delay={100} ease="ease" bottom>
+            <h1 className="coming-soon-h1">
+              Work-in-Progress <span className="dot-collision"></span>
+            </h1>
+          </Fade>
+        </div>
+      </>
+    ) : null}
+
+        {/* <div className="work-card mix mobile">
         <Fade duration={2000} delay={200} ease="ease" bottom>
           <div>
-          <img src={studentrecordImg} alt="" className="work-img" />
-          <h3 className="work-title">StudentGradeX</h3>
+          <img src={MovieAppImg} alt="" className="work-img" />
+          <h3 className="work-title">MoviesX</h3>
           <div className="links-container">
             <div>
-              <a href="https://studentgradex.netlify.app/" target="_blank">
+              <a href="https://github.com/abhijeetvinkare/react-native-moviesx" target="_blank">
                 <span className="work-button">
                   Demo
                   <AiOutlineArrowRight className="work-button-icon" />
@@ -241,7 +268,7 @@ function Work() {
             </div>
             <div>
               <a
-                href="https://github.com/abhijeetvinkare/StudentGradeX"
+                href="https://github.com/abhijeetvinkare/react-native-moviesx"
                 target="_blank"
               >
                 <span className="work-button">
@@ -253,7 +280,7 @@ function Work() {
           </div>
         </div>
         </Fade>
-        </div>
+        </div> */}
       </div>
     </section>
   );

@@ -155,7 +155,7 @@ function Contact() {
               <span>Email</span>
             </div>
             </Fade>
-            <Fade duration={3000} delay={600} ease="ease">
+            <Fade duration={3000} delay={400} ease="ease">
             <div className="input-container textarea">
               <textarea
                 name=""
@@ -171,7 +171,7 @@ function Contact() {
               <span>Message</span>
             </div>
             </Fade>
-            <Fade duration={3000} delay={800} ease="ease">
+            <Fade duration={3000} delay={400} ease="ease">
             <button className="button">
               <AiOutlineSend className="button-icon" />
               Send Message
