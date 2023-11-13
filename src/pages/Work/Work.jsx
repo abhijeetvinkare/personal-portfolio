@@ -73,7 +73,7 @@ function Work() {
         <div className="work-card mix web">
           <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <img src={coinwatcherImg} alt="" className="work-img" />
+            <a href="https://coinwatchers.netlify.app/" target="_blank"><img src={coinwatcherImg} alt="" className="work-img" /></a>
               <h3 className="work-title">Coinwatchers</h3>
               <div className="links-container">
                 <div>
