@@ -102,7 +102,7 @@ function Work() {
         <div className="work-card mix web">
           <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <img src={studentrecordImg} alt="" className="work-img" />
+            <a href="https://studentgradex.netlify.app/" target="_blank"><img src={studentrecordImg} alt="" className="work-img" /></a>
               <h3 className="work-title">StudentGradeX</h3>
               <div className="links-container">
                 <div>
@@ -132,7 +132,7 @@ function Work() {
         <div className="work-card mix web">
           <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <img src={planthealthImg} alt="" className="work-img" />
+            <a href="https://plant-health-pro.onrender.com/" target="_blank"><img src={planthealthImg} alt="" className="work-img" /></a>
               <h3 className="work-title">PlantHealthPro</h3>
               <div className="links-container">
                 <div>
@@ -165,7 +165,7 @@ function Work() {
         <div className="work-card mix web">
           <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <img src={RecorderXImg} alt="" className="work-img" />
+            <a href="https://recorderx.netlify.app/" target="_blank"><img src={RecorderXImg} alt="" className="work-img" /></a>
               <h3 className="work-title">RecorderX</h3>
               <div className="links-container">
                 <div>
@@ -195,7 +195,7 @@ function Work() {
         <div className="work-card mix web">
           <Fade duration={2000} delay={200} ease="ease" bottom>
             <div>
-              <img src={WeatherAppImg} alt="" className="work-img" />
+            <a href="https://abhijeetvinkare.github.io/weatherapp.github.io/" target="_blank"><img src={WeatherAppImg} alt="" className="work-img" /></a> 
               <h3 className="work-title">WeatherWave</h3>
               <div className="links-container">
                 <div>
