@@ -17,6 +17,7 @@
     "mixitup": "^3.3.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-icons": "^4.12.0",
     "react-intersection-observer": "^9.5.2",
     "react-reveal": "^1.2.2",
     "react-scrolllock": "^5.0.1",

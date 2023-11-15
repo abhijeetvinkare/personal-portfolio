@@ -14,7 +14,6 @@ import { ImFacebook2 } from "react-icons/im";
 import homeImage from "../../assets/images/ddd.png";
 import resume from "../../assets/PDF/resume.pdf";
 import Typed from "react-typed";
-import { motion } from "framer-motion";
 import { Fade } from "react-reveal";
 //loading Spinner
 import { Backdrop } from '@mui/material';
