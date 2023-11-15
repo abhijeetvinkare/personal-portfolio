@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Home.css";
 import {
   BsInstagram,
@@ -22,14 +22,7 @@ import HashLoader from "react-spinners/HashLoader";
 
 function Home() {
   //page loading
-  const [loading, setLoading] = useState(false);
-
-  document.onreadystatechange = () => {
-    if (document.readyState === 'complete') {
-      // Document has fully loaded, set isLoading to false
-      setLoading(false);
-    }
-  };
+  const [isPageLoading, setIsPageLoading] = useState(false);
 
   return (
     <section className="home" id="home">
@@ -137,7 +130,7 @@ function Home() {
         </Fade>
       </div>
       <div>
-        {loading ? (
+        {isPageLoading ? (
           <Backdrop
             sx={{
               color: "#ffffff",
