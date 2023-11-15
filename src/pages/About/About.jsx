@@ -3,7 +3,7 @@ import "./About.css";
 import aboutImg from "../../assets/images/about.png";
 import { AiOutlineSend } from "react-icons/ai";
 import { FaGraduationCap } from "react-icons/fa";
-import { Fade, Slide, Zoom } from 'react-reveal';
+import { Fade } from 'react-reveal';
 
 function About() {
 

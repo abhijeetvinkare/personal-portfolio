@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {useState } from "react";
 import "./Home.css";
 import {
   BsInstagram,
@@ -15,7 +15,7 @@ import homeImage from "../../assets/images/ddd.png";
 import resume from "../../assets/PDF/resume.pdf";
 import Typed from "react-typed";
 import { motion } from "framer-motion";
-import { Fade, Slide, Zoom } from "react-reveal";
+import { Fade } from "react-reveal";
 //loading Spinner
 import { Backdrop } from '@mui/material';
 import HashLoader from "react-spinners/HashLoader";

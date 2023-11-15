@@ -16,7 +16,7 @@ import certificateImg10 from "../../assets/images/certifications/TCS.jpg";
 import certificateImg11 from "../../assets/images/certifications/certificate.jpg";
 import certificateImg12 from "../../assets/images/certifications/0000.jpg";
 import certificateImg13 from "../../assets/images/certifications/0001.jpg";
-import { Fade, Slide, Zoom } from "react-reveal";
+import { Fade } from "react-reveal";
 
 function Certifications() {
   const certificationsData = [

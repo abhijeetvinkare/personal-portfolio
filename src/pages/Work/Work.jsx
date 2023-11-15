@@ -6,7 +6,6 @@ import studentrecordImg from "../../assets/images/Work/Untitledsd.png";
 import planthealthImg from "../../assets/images/Work/preview1.png";
 import RecorderXImg from "../../assets/images/Work/record3.jpg";
 import WeatherAppImg from "../../assets/images/Work/weather1.jpg";
-import MovieAppImg from "../../assets/images/Work/movie.png";
 import { useState } from "react";
 import mixitup from "mixitup";
 import { Fade } from "react-reveal";

@@ -4,7 +4,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { AiFillDatabase, AiOutlineLaptop } from "react-icons/ai";
 import { BsDatabase } from "react-icons/bs";
 import { VscTools } from "react-icons/vsc";
-import { Fade, Slide, Zoom, Flip, Bounce } from 'react-reveal';
+import { Fade } from 'react-reveal';
 
 function Skills() {
   const defaultActiveSkill = "Frontend"; // Set your desired default skill here
