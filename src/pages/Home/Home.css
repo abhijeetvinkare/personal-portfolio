@@ -452,7 +452,7 @@
 
 @media screen and (min-width: 576px) {
   .switch{
-    right: 48px !important; 
+    top: -8px; 
   }
 }
 

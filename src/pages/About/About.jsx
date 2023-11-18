@@ -74,8 +74,8 @@ function About() {
             </Fade >
             <div className="timeline">
               {qualificationItems.map((data, index) => (
-                <Fade duration={3000} delay={400} ease="ease-in-out">
-                <div className="timeline-item" key={index}>
+                <Fade duration={3000} delay={400} ease="ease-in-out" key={index}>
+                <div className="timeline-item">
                   <div className="circle-dot"></div>
                   <h3 className="timeline-title">
                   {data.title}

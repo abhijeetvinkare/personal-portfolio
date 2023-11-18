@@ -1,9 +1,10 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef, useContext } from "react";
 import "./Sidebar.css";
 import { FiShare2 } from "react-icons/fi";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-import logo from "../../assets/images/amono.png";
+import logoDark from "../../assets/images/amono.png";
+import logoLight from "../../assets/images/amonoblack.png";
 import { RWebShare } from "react-web-share";
 import { Fade, Slide, Zoom } from "react-reveal";
 import scrollLock from "scroll-lock";
@@ -69,8 +70,12 @@ function Sidebar() {
         <nav className="navbar">
           <div className="nav-logo">
             <Fade duration={2000} delay={200} ease="ease" left>
-              {" "}
-              <img src={logo} alt="logo" className="logo-img" />{" "}
+            <img src={logoDark} alt="Dark Logo" className="logo-img" />
+              {/* {isDarkMode ? (
+                <img src={logoDark} alt="Dark Logo" className="logo-img" />
+              ) : (
+                <img src={logoLight} alt="Light Logo" className="logo-img" />
+              )} */}
             </Fade>
           </div>
           <div className="nav-menu">

@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { createContext, useEffect, useRef, useState } from "react";
 import "./Home.css";
 import {
   BsInstagram,
@@ -21,22 +21,24 @@ import Cookies from "js-cookie";
 const THEME_COOKIE_KEY = "theme";
 const initialTheme = Cookies.get(THEME_COOKIE_KEY);
 
+
 function Home() {
   // Define state for dark mode
   const [isDarkMode, setIsDarkMode] = useState(
     // Default to dark if no cookie value
     !initialTheme || initialTheme === "dark" ? true : false
   );
-
   
   const [isVisible, setIsVisible] = useState(true);
   const [prevScrollPos, setPrevScrollPos] = useState(0);
+
 
   useEffect(() => {
     document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
 
     // Save theme in cookie
     Cookies.set(THEME_COOKIE_KEY, isDarkMode ? "dark" : "light");
+    
   }, [isDarkMode]);
 
   const toggleTheme = () => {
@@ -64,23 +66,25 @@ function Home() {
       };
     }, [prevScrollPos]);
 
+
   return (
     <section
       className={`home ${isDarkMode ? "home-dark" : "home-light"}`}
       id="home"
     >
+   
         <div className="toggle-switch-div" style={{ display: isVisible ? 'block' : 'none', transition: 'top 0.3s' }}>
-          <label class="switch">
+          <label className="switch">
             <input
               type="checkbox"
               name="themeToggle"
               checked={isDarkMode}
               onChange={toggleTheme}
             />
-            <span class="slider"></span>
+            <span className="slider"></span>
           </label>
         </div>
-
+   
 
       <div className="home-container container grid">
         <Fade duration={2000} delay={200} ease="ease" top>

@@ -5,6 +5,7 @@ import { AiFillDatabase, AiOutlineLaptop } from "react-icons/ai";
 import { BsDatabase } from "react-icons/bs";
 import { VscTools } from "react-icons/vsc";
 import { Fade } from 'react-reveal';
+import { v4 as uuidv4 } from 'uuid';
 
 function Skills() {
   const defaultActiveSkill = "Frontend"; // Set your desired default skill here
@@ -74,12 +75,11 @@ function Skills() {
       <Fade big cascade duration={2000} delay={200} ease="ease"><h2 className="section-title" data-heading="My Intro">My Technical Skills</h2></Fade>
       <div className="skills-container container grid">
         <div className="skills-tabs">
-          {Object.keys(skillsData).map((skill) => {
+          {Object.keys(skillsData).map((skill, index) => {
             const skillInfo = skillsData[skill];
             return (
-              <Fade bottom duration={2000} delay={200} ease="ease">  
+              <Fade bottom duration={2000} delay={200} ease="ease" key={index}>  
               <div
-                key={skill}
                 className={`skills-header ${
                   activeSkill === skill ? "skills-active" : ""
                 }`}
@@ -103,12 +103,11 @@ function Skills() {
         </div>
 
         <div className="skills-content">
-          {Object.keys(skillsData).map((skill) => {
+          {Object.keys(skillsData).map((skill, index) => {
             const skillInfo = skillsData[skill];
             return (
-              <Fade bottom duration={2000} delay={200} ease="ease">  
+              <Fade bottom duration={2000} delay={200} ease="ease" key={index}>  
               <div
-                key={skill}
                 className={`skills-group ${
                   activeSkill === skill ? "skills-active" : ""
                 }`}

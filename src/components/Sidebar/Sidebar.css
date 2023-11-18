@@ -106,6 +106,7 @@
 }
 
 @media screen and (max-width: 1024px) {
+  
   .sidebar {
     width: 100%;
     z-index: 999;
@@ -157,13 +158,11 @@
     color: var(--skin-color);
   }
 
-  .nav-toggle {
-    display: flex;
-  }
 }
 
 @media screen and (max-width: 576px) {
   .nav-toggle {
+    display: flex;
     right: initial;
     left: 1.5rem;
   }
