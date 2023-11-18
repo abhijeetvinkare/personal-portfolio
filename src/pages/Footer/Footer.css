@@ -20,7 +20,7 @@ footer p {
 .footer-h1 {
   font-family: "Poppins", sans-serif;
   font-weight: 800;
-  color: #ffff;
+  color: var(--title-color);
   font-size: var(--h1-font-size);
 }
 .footer-span {
@@ -52,7 +52,7 @@ footer p {
   padding: 10px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: rgba(243, 224, 224, 0.466);
+  color: var(--title-color);
   cursor: pointer;
 }
 .footer-li,
@@ -67,7 +67,7 @@ active {
   border: none;
   outline: none;
   text-decoration: none;
-  color: rgba(243, 224, 224, 0.466);
+  color: var(--text-color);
 }
 .footer-navlink:hover {
   color: var(--skin-color);
@@ -78,8 +78,8 @@ active {
 }
 .footer-social-link {
   cursor: pointer;
-  color: #fff;
-  background: var(--body-color);
+  color: var(--btn-color);
+  background: #000000;
   border-radius: 4px;
   text-align: center;
   text-decoration: none;
@@ -98,9 +98,10 @@ active {
 }
 .footer-social-link:hover {
   background-color: var(--skin-color);
+  color: var(--btn-color);
 }
 .footer-social-link span {
-  color: #666;
+  color: var(--text-color);
   position: absolute;
   font-family: sans-serif;
   bottom: 0;
@@ -132,6 +133,7 @@ active {
   bottom: 50px;
   visibility: visible;
   opacity: 1;
+  color: black;
 }
 
 /* font awesome icons */
@@ -158,7 +160,7 @@ active {
   justify-content: center;
 }
 .copyright-para {
-  color: rgba(243, 224, 224, 0.466);
+  color: var(--text-color);
   font-family: "Poppins", sans-serif;
   font-size: small;
   line-height: 1.8;

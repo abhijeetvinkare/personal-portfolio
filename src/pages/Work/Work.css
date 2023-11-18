@@ -72,7 +72,7 @@
 
 .active-work{
     background-color: var(--skin-color);
-    color: var(--title-color);
+    color: var(--btn-color);
 }
 
 
@@ -114,7 +114,7 @@
     height: 5px;
     border-radius: 50%;
     background-color: #ffffff;
-    color: #ffffff;
+    color: var(--title-color);
     box-shadow: 9999px 0 0 -5px;
     animation: dot-pulse 1.5s infinite linear;
     animation-delay: 0.25s;
@@ -129,7 +129,7 @@
     height: 5px;
     border-radius: 50%;
     background-color: #ffffff;
-    color: #ffffff;
+    color: var(--title-color);
   }
   .dot-pulse::before {
     box-shadow: 9984px 0 0 -5px;
@@ -185,7 +185,7 @@
     height: 7px;
     border-radius: 5px;
     background-color: #9880ff;
-    color: #ffffff;
+    color: var(--title-color);
     animation: dot-flashing 1s infinite linear alternate;
     animation-delay: 0.5s;
     margin-top: 20px;
@@ -201,8 +201,8 @@
     width: 7px;
     height: 7px;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--title-color);
+    color: var(--title-color);
     animation: dot-flashing 1s infinite alternate;
     animation-delay: 0s;
   }
@@ -211,15 +211,15 @@
     width: 7px;
     height: 7px;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--title-color);
+    color: var(--title-color);
     animation: dot-flashing 1s infinite alternate;
     animation-delay: 1s;
   }
   
   @keyframes dot-flashing {
     0% {
-      background-color: #ffffff;
+      background-color: var(--title-color);
     }
     50%, 100% {
       background-color: rgba(255, 255, 255, 0.2);
@@ -232,8 +232,8 @@
     width: 7px;
     height: 7px;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--title-color);
+    color: var(--title-color);
     margin-top: 20px;
     margin-left: 8px;
   }
@@ -248,8 +248,8 @@
     width: 7px;
     height: 7px;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color:var(--title-color);
+    color: var(--title-color);
     animation: dot-collision-before 2s infinite ease-in;
   }
   .dot-collision::after {
@@ -257,8 +257,8 @@
     width: 7px;
     height: 7px;
     border-radius: 5px;
-    background-color: #ffffff;
-    color: #ffffff;
+    background-color: var(--title-color);
+    color: var(--title-color);
     animation: dot-collision-after 2s infinite ease-in;
     animation-delay: 1s;
   }

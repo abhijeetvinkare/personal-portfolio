@@ -1,4 +1,4 @@
-import React, {useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./Home.css";
 import {
   BsInstagram,
@@ -11,20 +11,77 @@ import { FaSquareXTwitter } from "react-icons/fa6";
 import { AiOutlineUser } from "react-icons/ai";
 import { SiGmail } from "react-icons/si";
 import { ImFacebook2 } from "react-icons/im";
-import homeImage from "../../assets/images/ddd.png";
+import MobileHomeImageLightDark from "../../assets/images/ddd.png";
 import resume from "../../assets/PDF/resume.pdf";
 import Typed from "react-typed";
 import { Fade } from "react-reveal";
-//loading Spinner
-import { Backdrop } from '@mui/material';
-import HashLoader from "react-spinners/HashLoader";
+import MobileHomeImageLight from "../../assets/images/mobilelight.png";
+import Cookies from "js-cookie";
+
+const THEME_COOKIE_KEY = "theme";
+const initialTheme = Cookies.get(THEME_COOKIE_KEY);
 
 function Home() {
-  //page loading
-  const [isPageLoading, setIsPageLoading] = useState(false);
+  // Define state for dark mode
+  const [isDarkMode, setIsDarkMode] = useState(
+    // Default to dark if no cookie value
+    !initialTheme || initialTheme === "dark" ? true : false
+  );
+
+  
+  const [isVisible, setIsVisible] = useState(true);
+  const [prevScrollPos, setPrevScrollPos] = useState(0);
+
+  useEffect(() => {
+    document.body.setAttribute("data-theme", isDarkMode ? "dark" : "light");
+
+    // Save theme in cookie
+    Cookies.set(THEME_COOKIE_KEY, isDarkMode ? "dark" : "light");
+  }, [isDarkMode]);
+
+  const toggleTheme = () => {
+    setIsDarkMode((prevMode) => !prevMode);
+  };
+
+  const MobileHomeSrc = isDarkMode
+    ? MobileHomeImageLightDark
+    : MobileHomeImageLight;
+
+    useEffect(() => {
+      const handleScroll = () => {
+        const currentScrollPos = window.scrollY;
+        const isScrollingUp = currentScrollPos < prevScrollPos;
+  
+        setIsVisible(isScrollingUp || currentScrollPos < 10); // Show navbar when at the top
+  
+        setPrevScrollPos(currentScrollPos);
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, [prevScrollPos]);
 
   return (
-    <section className="home" id="home">
+    <section
+      className={`home ${isDarkMode ? "home-dark" : "home-light"}`}
+      id="home"
+    >
+        <div className="toggle-switch-div" style={{ display: isVisible ? 'block' : 'none', transition: 'top 0.3s' }}>
+          <label class="switch">
+            <input
+              type="checkbox"
+              name="themeToggle"
+              checked={isDarkMode}
+              onChange={toggleTheme}
+            />
+            <span class="slider"></span>
+          </label>
+        </div>
+
+
       <div className="home-container container grid">
         <Fade duration={2000} delay={200} ease="ease" top>
           <div className="home-social">
@@ -61,7 +118,7 @@ function Home() {
             </div>
           </div>
         </Fade>
-        <img src={homeImage} alt="" className="home-img" />
+        <img src={MobileHomeSrc} alt="" className="home-img" />
         <div className="home-data">
           <Fade big duration={4000} delay={350} ease="ease">
             <h1 className="home-title-name">Hi, I'am Abhijeet Vinkare</h1>{" "}
@@ -127,22 +184,6 @@ function Home() {
             </div>
           </div>
         </Fade>
-      </div>
-      <div>
-        {isPageLoading ? (
-          <Backdrop
-            sx={{
-              color: "#ffffff",
-              zIndex: (theme) => theme.zIndex.drawer + 1,
-              backgroundColor: "rgb(0,0,0,0.8)",
-            }}
-            open
-          >
-            <HashLoader color="#FF2C3F" />
-          </Backdrop>
-        ) : (
-          ""
-        )}
       </div>
     </section>
   );

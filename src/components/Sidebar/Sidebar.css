@@ -73,6 +73,7 @@
 .share-icon {
   font-size: 1.5rem;
   cursor: pointer;
+  color: var(--title-color);
 }
 .share-icon:hover {
   color: var(--skin-color);
@@ -88,7 +89,7 @@
   font-size: 1.2rem;
   border-radius: 0.25rem;
   background-color: var(--skin-color);
-  color: var(--title-color);
+  color: var(--btn-color);
   display: none;
   justify-content: center;
   align-items: center;
